@@ -99,6 +99,26 @@ body {
     text-decoration: none;
 }
 
+/* Hamburger in CSS only! */
+#hamburger {
+    position: relative;
+    padding-left: 1.25em;
+    z-index: 5;
+}
+#hamburger::before {
+    content: "";
+    position: absolute;
+    left: 2px;
+    top: 4px;
+
+    width: 1.75rem;
+    height: 0.45rem;
+    background: #fff;
+    box-shadow: 
+        0 0.66em 0 0 #fff,
+        0 1.33em 0 0 #fff;
+}
+
 /* Articles */
 /* ######## */
 
@@ -209,6 +229,11 @@ footer {
         border: 1px solid #fff;
         line-height: 45px;
         min-width: 500px;
+    }
+
+    /* Hide hamburger icon in favor of list navigation */
+    #hamburger {
+        display: none;
     }
 
     .image3 {
