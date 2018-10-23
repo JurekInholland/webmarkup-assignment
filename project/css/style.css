@@ -143,3 +143,151 @@ footer {
     grid-area: footer;
     /* border: 1px solid #fff; */
 }
+
+/* CSS GRID INDEX */
+/* ######## */
+
+.image1 {
+    grid-area: img1;
+}
+.image2 {
+    grid-area: img2;
+}
+.image3 {
+    grid-area: img3;
+}
+.image4 {
+    grid-area: img4;
+}
+
+.poster1 {
+    grid-area: poster1;
+}
+.poster2 {
+    grid-area: poster2;
+}
+.poster3 {
+    grid-area: poster3;
+}
+.poster4 {
+    grid-area: poster4;
+}
+
+/* Media Querries */
+/* ############## */
+
+/* Tablet */
+@media screen and (min-width: 361px) {
+
+    .page-header {
+        height: 200px;
+        line-height: 100px;
+        display: flex;
+        align-content: center;
+        align-items: center;
+        
+    }
+    .page-header h1 {
+        font-size: 5rem;
+        width: 100%;
+        margin: 0 auto;
+
+        /* add outline to h1 */
+        -webkit-text-stroke: 1px black;  
+
+    }
+
+    /* Unhide navigation */
+    .main-nav ul {
+        display: flex;
+        justify-content: space-between;
+        justify-items: center;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    .main-nav {
+        border: 1px solid #fff;
+        line-height: 45px;
+        min-width: 500px;
+    }
+
+    .image3 {
+        display: none;
+    }
+
+    /* unhide last article */
+    article:nth-of-type(n+4) {
+        display: flex;
+    }
+
+    article {
+        height: 245px;
+    }
+
+    article h2 {
+        font-size: 5rem;
+    }
+
+    /* target all but the first article h2 */
+    /* and set a smaller max width to force a line break */
+    article:not(:first-of-type) h2 {
+        max-width: 580px;
+    }
+
+    img {
+        height: 400px;
+        max-height: 400px;
+    }
+
+    /* remove border of last image */
+    img:nth-of-type(n+4) {
+        border: 0px solid transparent;
+    }
+
+    footer {
+        font-size: 1.25rem;
+    }
+
+    .content {
+        display: grid;
+        grid-area: content;
+        grid-template-areas:
+            "poster1 poster1"
+            "img1 img2"
+            "poster4 poster4"
+            "img4 img4";
+    }
+}
+
+@media screen and (min-width: 961px) {
+
+    .content {
+        display: block;
+    }
+
+    .poster2, .poster3 {
+        display: flex;
+    }
+    .image3 {
+        display: block;
+    }
+    article {
+        height: 230px;
+    }
+
+    img {
+        border: 0px solid transparent;
+        max-height: 400px;
+    }
+
+    /* Force line break while keeping text centered */
+    article h2 {
+        max-width: 800px;
+    }
+
+    .main-grid {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+}
