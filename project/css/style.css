@@ -19,7 +19,6 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 margin: 0;
 padding: 0;
 font-weight: normal;
-
 }
 
 ol, ul {
@@ -40,7 +39,7 @@ height: auto;
 
 /* Company name should always be visible */
 body {
-    min-width: 265px;
+    min-width: 300px;
 }
 
 /* Setup page elements in a simple grid */
@@ -193,6 +192,75 @@ footer {
     grid-area: poster4;
 }
 
+/* Products page */
+/* ############# */
+
+.product-catalog {
+    max-width: 100%;
+    height: 45px;
+    grid-area: poster1;
+}
+
+.gallery {
+    display: grid;
+    /* grid-template-rows: 300px 300px; */
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 200px);
+    grid-gap: 18px; 
+    /* max-width: 90%;
+    margin: 0 auto; */
+    margin: 20px;
+    
+}
+
+.gallery a {
+    background-size: cover;
+    background-position: center;
+    /* border: 10px solid white; */
+    /* margin: 10px; */
+}
+
+/* Gallery images */
+/* ############## */
+
+#img1 {
+    background-image: url(../img/small/product1.jpg);
+}
+#img2 {
+    background-image: url(../img/small/product2.jpg);
+}
+#img3 {
+    background-image: url(../img/small/product3.jpg);
+}
+#img4 {
+    background-image: url(../img/small/product4.jpg);
+}
+#img5 {
+    background-image: url(../img/small/product5.jpg);
+}
+#img6 {
+    background-image: url(../img/small/product6.jpg);
+}
+#img7 {
+    background-image: url(../img/small/product7.jpg);
+}
+#img8 {
+    background-image: url(../img/small/product8.jpg);
+}
+#img9 {
+    background-image: url(../img/small/product9.jpg);
+}
+#img10 {
+    background-image: url(../img/small/product10.jpg);
+}
+#img11 {
+    background-image: url(../img/small/product11.jpg);
+}
+#img12 {
+    background-image: url(../img/small/product12.jpg);
+}
+
 /* Media Querries */
 /* ############## */
 
@@ -282,8 +350,22 @@ footer {
             "poster4 poster4"
             "img4 img4";
     }
+
+    /* Products page */
+    /* ############# */
+
+    .product-catalog {
+        display: none;
+    }
+
+    .gallery {
+        grid-area: gallery;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(6, 200px);
+    }
 }
 
+/* Desktop */
 @media screen and (min-width: 961px) {
 
     .content {
@@ -315,4 +397,20 @@ footer {
         margin: 0 auto;
     }
 
+    /* Products page */
+    /* ############# */
+
+    .product-catalog {
+        display: flex;
+        height: 120px;
+    }
+
+    .product-catalog h2 {
+        max-width: 100%;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 200px);
+    }
 }
