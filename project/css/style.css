@@ -1,11 +1,14 @@
-/* #################### */
-/* © Jurek Baumann 2018 */
-/* #################### */
+/* ###################### */
+/* © Jurek Baumann - 2018 */
+/* ###################### */
 
 /* simple CSS RESET */
+/* ################ */
+
 html {
 box-sizing: border-box;
 font-size: 16px;
+font-family: Arial, sans-serif;
 }
 
 *, *:before, *:after {
@@ -16,6 +19,7 @@ body, h1, h2, h3, h4, h5, h6, p, ol, ul {
 margin: 0;
 padding: 0;
 font-weight: normal;
+
 }
 
 ol, ul {
@@ -25,4 +29,117 @@ list-style: none;
 img {
 max-width: 100%;
 height: auto;
+
+}
+/* ############ */
+/* Mobile first */
+/* ############ */
+
+/* General */
+/* ####### */
+
+/* Company name should always be visible */
+body {
+    min-width: 265px;
+}
+
+/* Setup page elements in a simple grid */
+.main-grid {
+    display: grid;
+
+    grid-template-areas:
+        "header"
+        "navi"
+        "content"
+        "footer";
+}
+
+/* Hide elements that are not shown in the smallest breakpoint */
+.poster2, .poster3, .poster4 {
+    display: none;
+}
+
+/* Page Header */
+/* ########### */
+
+.page-header {
+    height: 65px;
+    line-height: 65px;
+    background-image: url(../img/companylogoBG.jpg);
+    background-size: cover;
+    grid-area: header;
+}
+
+.page-header h1 {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+/* Horizontal Navigation */
+/* ##################### */
+
+/* Hide nav ul by default: Enabled on large devices via media querry */
+.main-nav ul {
+    display: none;
+
+}
+
+.main-nav {
+    height: 45px;
+    background: #707070;
+    border: 4px solid #fff;
+    grid-area: navi;
+}
+
+.main-nav ul li a {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Articles */
+/* ######## */
+
+article {
+    background: #2699FB;
+    color: #fff;
+    height: 100px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+/* Images */
+/* ###### */
+
+img {
+    display: block;
+    border: 3px solid #fff;
+    flex: 1;  
+    max-height: 170px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+}
+
+/* Footer */
+/* ###### */
+
+footer {
+    font-size: 1rem;
+    height: 60px;
+    color: #fff;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: footer;
+    /* border: 1px solid #fff; */
 }
