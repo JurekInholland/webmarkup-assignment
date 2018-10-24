@@ -15,6 +15,12 @@ html {
     box-sizing: inherit;
     }
     
+    a {
+        font-style: normal;
+        text-decoration: none;
+        display: block;
+    }
+
     body, h1, h2, h3, h4, h5, h6, p, ol, ul {
     margin: 0;
     padding: 0;
@@ -84,13 +90,17 @@ html {
         grid-area: header;
     }
     
-    .page-header h1 {
+    .page-header a {
         color: #fff;
         font-size: 2rem;
         text-align: center;
+        
+    }
+    .page-header h1 {
+        margin: 0 auto;
         font-family: Hack;
     }
-    
+
     /* Horizontal Navigation */
     /* ##################### */
     
@@ -113,6 +123,10 @@ html {
         text-decoration: none;
     }
     
+    .main-nav ul li a:hover {
+        color: #2699FB;
+    }
+
     /* Hamburger in CSS only! */
     #hamburger {
         position: relative;
@@ -377,7 +391,7 @@ html {
 
         height: 2rem;
         font-size: 1.25rem;
-        border: 0.125rem solid rgba(0, 0, 0, .2);
+        border: 0.125rem solid rgba(0, 0, 0, .25);
         background: #2699FB;
         color: #fff;
         margin: 0 auto;
@@ -387,6 +401,17 @@ html {
         right: -0.125rem;
     }
     
+    input[type=submit]:hover {
+        cursor: pointer;
+        color: #2699FB;
+        background: #fff;
+        border-color: #2699FB;
+    }
+
+    input[type=submit]:active {
+        color: #444;
+    }
+
     form {
         margin: 1.5rem;
         overflow: hidden;
@@ -406,7 +431,7 @@ html {
             align-items: center;
             
         }
-        .page-header h1 {
+        .page-header a {
             font-size: 2.9rem;
             margin: 0 auto;
     
@@ -553,7 +578,7 @@ html {
             max-height: 25rem;
         }
 
-        .page-header h1 {
+        .page-header a {
             font-size: 5.5rem;
             -webkit-text-stroke: 0.1875rem black;
         }
