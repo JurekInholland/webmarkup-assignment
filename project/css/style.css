@@ -53,11 +53,6 @@ body {
         "footer";
 }
 
-/* Hide elements that are not shown in the smallest breakpoint */
-.poster2, .poster3, .poster4 {
-    display: none;
-}
-
 /* Page Header */
 /* ########### */
 
@@ -162,6 +157,15 @@ footer {
     grid-area: footer;
 }
 
+
+/* Index page */
+/* ########## */
+
+/* Hide elements that are not shown in the smallest breakpoint */
+.poster2, .poster3, .poster4 {
+    display: none;
+}
+
 /* CSS GRID INDEX */
 /* ######## */
 
@@ -202,8 +206,6 @@ footer {
 
 .gallery {
     display: grid;
-    /* grid-template-rows: 300px 300px; */
-
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, 200px);
     grid-gap: 1rem; 
