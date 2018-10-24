@@ -37,6 +37,14 @@ height: auto;
 /* General */
 /* ####### */
 
+/* Font-Hack */
+@font-face {
+    font-family: 'Hack';
+    src: url('../fonts/Hack-Bold.woff') format('woff'), /* Modern Browsers */
+    url('../fonts/Hack-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Hack-Bold.svg#Hack-Bold') format('svg'); /* Legacy iOS */
+}
+
 /* Company name and footer should always fit */
 body {
     min-width: 302px;
@@ -68,6 +76,7 @@ body {
     color: #fff;
     font-size: 2rem;
     text-align: center;
+    font-family: Hack;
 }
 
 /* Horizontal Navigation */
@@ -156,7 +165,6 @@ footer {
     justify-content: center;
     grid-area: footer;
 }
-
 
 /* Index page */
 /* ########## */
@@ -381,7 +389,7 @@ form {
         margin: 0 auto;
 
         /* add outline to h1 */
-        -webkit-text-stroke: 1px black;  
+        -webkit-text-stroke: 3px black;
 
     }
 
