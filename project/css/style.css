@@ -1,639 +1,659 @@
 /* ###################### */
-/* © Jurek Baumann - 2018 */
+/* Â© Jurek Baumann - 2018 */
 /* ###################### */
 
 /* simple CSS RESET */
 /* ################ */
 
 html {
-box-sizing: border-box;
-font-size: 16px;
-font-family: Arial, sans-serif;
-}
-
-*, *:before, *:after {
-box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
-margin: 0;
-padding: 0;
-font-weight: normal;
-}
-
-ol, ul {
-list-style: none;
-}
-
-img {
-max-width: 100%;
-height: auto;
-
-}
-/* ############ */
-/* Mobile first */
-/* ############ */
-
-/* General */
-/* ####### */
-
-/* Font-Hack */
-@font-face {
-    font-family: 'Hack';
-    src: url('../fonts/Hack-Bold.woff') format('woff'), /* Modern Browsers */
-    url('../fonts/Hack-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-    url('../fonts/Hack-Bold.svg#Hack-Bold') format('svg'); /* Legacy iOS */
-}
-
-/* Company name and footer should always fit */
-body {
-    min-width: 302px;
-}
-
-body video {
-    display: none;
-}
-
-/* Setup page elements in a simple grid */
-.main-grid {
-    display: grid;
-
-    grid-template-areas:
-        "header"
-        "navi"
-        "content"
-        "footer";
-}
-
-/* Page Header */
-/* ########### */
-
-.page-header {
-    height: 65px;
-    line-height: 65px;
-    background-image: url(../img/companylogoBG.jpg);
-    background-size: cover;
-    grid-area: header;
-}
-
-.page-header h1 {
-    color: #fff;
-    font-size: 2rem;
-    text-align: center;
-    font-family: Hack;
-}
-
-/* Horizontal Navigation */
-/* ##################### */
-
-/* Hide nav ul by default: Enabled on large devices via media querry */
-.main-nav ul {
-    display: none;
-
-}
-
-.main-nav {
-    height: 45px;
-    background: #707070;
-    border: 4px solid #fff;
-    grid-area: navi;
-}
-
-.main-nav ul li a {
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Hamburger in CSS only! */
-#hamburger {
-    position: relative;
-    padding-left: 1.25em;
-    z-index: 5;
-}
-#hamburger::before {
-    content: "";
-    position: absolute;
-    left: 2px;
-    top: 4px;
-
-    width: 1.75rem;
-    height: 0.45rem;
-    background: #fff;
-    box-shadow: 
-        0 0.66em 0 0 #fff,
-        0 1.33em 0 0 #fff;
-}
-
-/* Articles */
-/* ######## */
-
-article {
-    background: #2699FB;
-    color: #fff;
-    height: 100px;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1.25rem;
-}
-
-/* Images */
-/* ###### */
-
-img {
-    display: block;
-    border: 3px solid #fff;
-    flex: 1;  
-    max-height: 170px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-
-}
-
-/* Footer */
-/* ###### */
-
-footer {
-    font-size: 1rem;
-    height: 60px;
-    color: #fff;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    grid-area: footer;
-}
-
-/* Index page */
-/* ########## */
-
-/* Hide elements that are not shown in the smallest breakpoint */
-.poster2, .poster3, .poster4 {
-    display: none;
-}
-
-/* CSS GRID INDEX */
-/* ######## */
-
-.image1 {
-    grid-area: img1;
-}
-.image2 {
-    grid-area: img2;
-}
-.image3 {
-    grid-area: img3;
-}
-.image4 {
-    grid-area: img4;
-}
-
-.poster1 {
-    grid-area: poster1;
-}
-.poster2 {
-    grid-area: poster2;
-}
-.poster3 {
-    grid-area: poster3;
-}
-.poster4 {
-    grid-area: poster4;
-}
-
-/* Products page */
-/* ############# */
-
-.content-product {
-    background: #fff;
-}
-
-.banner {
-    max-width: 100%;
-    height: 3rem;
-    grid-area: poster1;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(12, 200px);
-    grid-gap: 1rem; 
-    margin: 20px;
-    
-}
-
-.gallery a {
-    background-size: cover;
-    background-position: center;
-}
-
-/* Gallery images */
-/* ############## */
-
-#img1 {
-    background-image: url(../img/small/product1.jpg);
-}
-#img2 {
-    background-image: url(../img/small/product2.jpg);
-}
-#img3 {
-    background-image: url(../img/small/product3.jpg);
-}
-#img4 {
-    background-image: url(../img/small/product4.jpg);
-}
-#img5 {
-    background-image: url(../img/small/product5.jpg);
-}
-#img6 {
-    background-image: url(../img/small/product6.jpg);
-}
-#img7 {
-    background-image: url(../img/small/product7.jpg);
-}
-#img8 {
-    background-image: url(../img/small/product8.jpg);
-}
-#img9 {
-    background-image: url(../img/small/product9.jpg);
-}
-#img10 {
-    background-image: url(../img/small/product10.jpg);
-}
-#img11 {
-    background-image: url(../img/small/product11.jpg);
-}
-#img12 {
-    background-image: url(../img/small/product12.jpg);
-}
-
-/* Contact Page */
-/* ############ */
-.content-contact {
-    background: #F5F5F5;
-
-}
-
-.content-contact h3 {
-    display: none;
-}
-
-fieldset {
-    /* margin: 10px; */
-    padding: 0;
-    margin: 15px 0;
-    border: 2px solid #707070;
-    background: #fff;
-    font-size: 1rem;
-
-}
-
-select {
-    width: 100%;
-    font-size: 1rem;
-    height: 1.5rem;
-    margin-top: 10px;
-    color: #707070;
-    border: 2px solid #707070; 
-}
-
-.topic {
-    position: relative;
-    justify-content: space-between;
-    color: #AAA;
-    padding: 5px;
-    min-width: 200px;
-  }
-  
-  .topic:after {
-      content: '˅';
-      font-family: Arial, Helvetica, sans-serif;
-      color: #707070;
-      text-align: center;
-      line-height: 1.25rem;
-      top: 2.1rem;
-      right: 5px;
-      height: 22px;
-      margin: 0;
-      padding: 0;
-      background: #F5F5F5;
-      border: 1px solid #707070;
-      position: absolute;
-      pointer-events: none;
-      overflow: hidden;
-      box-sizing: border-box;
-  }
- 
-  .topic select {
-      appearance: none;
-      -webkit-appearance: none;
-  }
-
-input, textarea {
-    font-family: Arial, sans-serif;
-    font-size: 1rem;
-    border: 0px solid transparent;
-    width: 100%;
-    height: 1.5rem;
-    padding: 0;
-    padding-left: 5px;
-    margin: 0;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 5rem;
-    padding-top: 5px;
-    display: block;
-}
-
-input::placeholder, textarea::placeholder {
-    font-size: 1rem;
-    color: #AAA;
-
-}
-
-input[type=submit] {
-    height: 2rem;
-    font-size: 1.25rem;
-    border: 2px solid rgba(0, 0, 0, .2);
-    background: #2699FB;
-    color: #fff;
-    margin: 0 auto;
     box-sizing: border-box;
-    /* margin: 2px; */
-    overflow: hidden;
-    right: -2px;
-}
-
-form {
-    margin: 25px;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
-/* Media Querries */
-/* ############## */
-
-/* Tablet */
-@media screen and (min-width: 361px) {
-
-    .page-header {
-        height: 200px;
-        line-height: 100px;
-        display: flex;
-        align-content: center;
-        align-items: center;
-        
+    font-size: 16px;
+    font-family: Arial, sans-serif;
     }
-    .page-header h1 {
-        font-size: 5rem;
-        width: 100%;
-        margin: 0 auto;
-
-        /* add outline to h1 */
-        -webkit-text-stroke: 3px black;
-
+    
+    *, *:before, *:after {
+    box-sizing: inherit;
     }
-
-    /* Unhide navigation */
-    .main-nav ul {
-        display: flex;
-        justify-content: space-between;
-        justify-items: center;
-        max-width: 480px;
-        margin: 0 auto;
+    
+    body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
     }
-    .main-nav {
-        border: 1px solid #fff;
-        line-height: 45px;
-        min-width: 500px;
+    
+    ol, ul {
+    list-style: none;
     }
-
-    /* Hide hamburger icon in favor of list navigation */
-    #hamburger {
-        display: none;
-    }
-
-    .image3 {
-        display: none;
-    }
-
-    /* unhide last article */
-    article:nth-of-type(n+4) {
-        display: flex;
-    }
-
-    article {
-        height: 245px;
-    }
-
-    article h2 {
-        font-size: 5rem;
-    }
-
-    /* target all but the first article h2 */
-    /* and set a smaller max width to force a line break */
-    article:not(:first-of-type) h2 {
-        max-width: 580px;
-    }
-
+    
     img {
-        height: 400px;
-        max-height: 400px;
+    max-width: 100%;
+    height: auto;
     }
-
-    /* remove border of last image */
-    img:nth-of-type(n+4) {
-        border: 0px solid transparent;
+    
+    /* Fix styling issues on mobile safari */
+    textarea,
+    input[type="text"],
+    input[type="button"],
+    input[type="submit"],
+    .input-checkbox {
+      -webkit-appearance: none;
+      border-radius: 0;
     }
-
+    /* ############ */
+    /* Mobile first */
+    /* ############ */
+    
+    /* General */
+    /* ####### */
+    
+    /* Font-Hack */
+    @font-face {
+        font-family: 'Hack';
+        src: url('../fonts/Hack-Bold.woff') format('woff'), /* Modern Browsers */
+        url('../fonts/Hack-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+        url('../fonts/Hack-Bold.svg#Hack-Bold') format('svg'); /* Legacy iOS */
+    }
+    
+    /* Company name and footer should always fit */
+    body {
+        /* min-width: 302px; */
+    }
+    
+    video {
+        display: none;
+    }
+    
+    /* Setup page elements in a simple grid */
+    .main-grid {
+        display: grid;
+    
+        grid-template-areas:
+            "header"
+            "navi"
+            "content"
+            "footer";
+    }
+    
+    /* Page Header */
+    /* ########### */
+    
+    .page-header {
+        height: 65px;
+        line-height: 65px;
+        background-image: url(../img/companylogoBG.jpg);
+        background-size: cover;
+        grid-area: header;
+    }
+    
+    .page-header h1 {
+        color: #fff;
+        font-size: 2rem;
+        text-align: center;
+        font-family: Hack;
+    }
+    
+    /* Horizontal Navigation */
+    /* ##################### */
+    
+    /* Hide nav ul by default: Enabled on large devices via media querry */
+    .main-nav ul {
+        display: none;
+        margin: 15px 0;
+    
+    }
+    
+    .main-nav {
+        height: 45px;
+        background: #707070;
+        border: 4px solid #fff;
+        grid-area: navi;
+    }
+    
+    .main-nav ul li a {
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    /* Hamburger in CSS only! */
+    #hamburger {
+        position: relative;
+        padding-left: 1.25em;
+        z-index: 5;
+    }
+    #hamburger::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 4px;
+    
+        width: 1.75rem;
+        height: 0.45rem;
+        background: #fff;
+        box-shadow: 
+            0 0.66em 0 0 #fff,
+            0 1.33em 0 0 #fff;
+    }
+    
+    /* Articles */
+    /* ######## */
+    
+    article {
+        background: #2699FB;
+        color: #fff;
+        height: 100px;
+        font-size: 1.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    /* Images */
+    /* ###### */
+    
+    img {
+        display: block;
+        border: 3px solid #fff;
+        flex: 1;  
+        max-height: 170px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    
+    }
+    
+    /* Footer */
+    /* ###### */
+    
     footer {
         font-size: 1rem;
+        height: 60px;
+        color: #fff;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: footer;
     }
-
-    .content {
-        display: grid;
-        grid-area: content;
-        grid-template-areas:
-            "poster1 poster1"
-            "img1 img2"
-            "poster4 poster4"
-            "img4 img4";
-    }
-
-    /* Products page */
-    /* ############# */
-
-    .banner {
+    
+    /* Index page */
+    /* ########## */
+    
+    /* Hide elements that are not shown in the smallest breakpoint */
+    .poster2, .poster3, .poster4 {
         display: none;
     }
-
-    .gallery {
-        grid-area: gallery;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(6, 200px);
+    
+    /* CSS GRID INDEX */
+    /* ######## */
+    
+    .image1 {
+        grid-area: img1;
     }
-
-    /* Contact page */
-    /* ############ */
-
-    /* select second and third fieldset */
-    form fieldset:nth-of-type(-n+3):not(:nth-of-type(1)) {
-        height: 4rem;
-    }
-
-    /* Split these in two to make edge happy :) */
-    input::placeholder, textarea::placeholder {
-        font-size: 2rem;
-    }
-
-     input, textarea, fieldset, select, input[type=submit] {
-        font-size: 2rem;
-    }
-
-    .topic {
-        padding: 1rem;
-        height: 8rem;
-    }
-
-    input, textarea {
-        padding-left: 1rem;
-    }
-    input[type=submit] {
-        height: 3rem;
-        margin-top: 20px;
-    }
-
-    input {
-        height: 100%;
-    }
-
-    .topic:after {
-      line-height: 2.9rem;
-      height: 2.9rem;
-      top: 4rem;
-      right: 1rem;
-    }
-    textarea {
-        height: 12rem;
-    }
-
-    select {
-        height: 3rem;
-    }
-}
-
-/* Desktop */
-@media screen and (min-width: 961px) {
-
-    /* enable background video */
-    body video {
-        display: initial;
-        position: absolute;
-        z-index: -10;
-        width: 100%;
-        /* height: 100vh; */
-        /* background-attachment: scroll; */
-        margin: 0;
-        padding: 0;
-        vertical-align: middle;
-    }
-
-    .content {
-        display: block;
-    }
-
-    .poster2, .poster3 {
-        display: flex;
+    .image2 {
+        grid-area: img2;
     }
     .image3 {
-        display: block;
+        grid-area: img3;
     }
-    article {
-        height: 14rem;
+    .image4 {
+        grid-area: img4;
     }
-
-    img {
-        border: 0px solid transparent;
-        max-height: 400px;
+    
+    .poster1 {
+        grid-area: poster1;
     }
-
-    /* Force line break while keeping text centered */
-    article h2 {
-        max-width: 800px;
+    .poster2 {
+        grid-area: poster2;
     }
-
-    .main-grid {
-        max-width: 960px;
-        margin: 0 auto;
+    .poster3 {
+        grid-area: poster3;
     }
-
+    .poster4 {
+        grid-area: poster4;
+    }
+    
     /* Products page */
     /* ############# */
-
+    
+    .content-product {
+        background: #fff;
+    }
+    
     .banner {
-        display: flex;
-        height: 7rem;
-    }
-
-    .banner h2 {
         max-width: 100%;
+        height: 3rem;
+        grid-area: poster1;
     }
-
+    
     .gallery {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: repeat(3, 200px);
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 200px);
+        grid-gap: 1rem; 
+        margin: 20px;
+        
     }
-
-    /* Contact page */
+    
+    .gallery a {
+        background-size: cover;
+        background-position: center;
+    }
+    
+    /* Gallery images */
+    /* ############## */
+    
+    #img1 {
+        background-image: url(../img/small/product1.jpg);
+    }
+    #img2 {
+        background-image: url(../img/small/product2.jpg);
+    }
+    #img3 {
+        background-image: url(../img/small/product3.jpg);
+    }
+    #img4 {
+        background-image: url(../img/small/product4.jpg);
+    }
+    #img5 {
+        background-image: url(../img/small/product5.jpg);
+    }
+    #img6 {
+        background-image: url(../img/small/product6.jpg);
+    }
+    #img7 {
+        background-image: url(../img/small/product7.jpg);
+    }
+    #img8 {
+        background-image: url(../img/small/product8.jpg);
+    }
+    #img9 {
+        background-image: url(../img/small/product9.jpg);
+    }
+    #img10 {
+        background-image: url(../img/small/product10.jpg);
+    }
+    #img11 {
+        background-image: url(../img/small/product11.jpg);
+    }
+    #img12 {
+        background-image: url(../img/small/product12.jpg);
+    }
+    
+    /* Contact Page */
     /* ############ */
+    .content-contact {
+        background: #F5F5F5;
+    
+    }
+    
     .content-contact h3 {
-        color: #707070;
-        font-size: 2rem;
-        display: block;
-        margin: 1.75rem;
-        margin-bottom: 0px;
+        display: none;
     }
-
-    form {
-        margin: 1rem 4rem;
-        margin-top: 0;
+    
+    fieldset {
+        /* margin: 10px; */
+        padding: 0;
+        margin: 15px 0;
+        border: 2px solid #707070;
+        background: #fff;
+        font-size: 1rem;
+    
     }
-
-    .topic {
-        display: block;
-        padding: 0px;
-        padding-left: 1rem;
-        height: 4rem;
-        line-height: 4rem;
-    }
-
-    .topic::after {
-      line-height: 2.9rem;
-      height: 2.9rem;
-      top: 0.42rem;
-      right: 1.25rem;
-    }
-
+    
     select {
-        display: block;
-        width: 520px;
-        /* float: right; */
-        margin: 6px 20px;
-        padding: 0;
-        float: right;
+        width: 100%;
+        font-size: 1rem;
+        height: 1.5rem;
+        margin-top: 10px;
+        color: #707070;
+        border: 2px solid #707070; 
     }
-    label {
-        width: 300px;
-        line-height: 3rem;
+    
+    .topic {
+        position: relative;
+        justify-content: space-between;
+        color: #AAA;
+        padding: 5px;
+        min-width: 200px;
+      }
+      
+      .topic:after {
+          content: 'Ë…';
+          font-family: Arial, Helvetica, sans-serif;
+          color: #707070;
+          text-align: center;
+          line-height: 1.25rem;
+          top: 2.1rem;
+          right: 5px;
+          height: 22px;
+          margin: 0;
+          padding: 0;
+          background: #F5F5F5;
+          border: 1px solid #707070;
+          position: absolute;
+          pointer-events: none;
+          overflow: hidden;
+          box-sizing: border-box;
+      }
+     
+      .topic select {
+          appearance: none;
+          -webkit-appearance: none;
+      }
+    
+    input, textarea {
+        font-family: Arial, sans-serif;
+        font-size: 1rem;
+        border: 0px solid transparent;
+        width: 100%;
+        height: 1.5rem;
+        padding: 0;
+        padding-left: 5px;
         margin: 0;
-        padding: 0;
     }
-}
+    
+    textarea {
+        resize: vertical;
+        min-height: 5rem;
+        padding-top: 5px;
+        display: block;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        font-size: 1rem;
+        color: #AAA;
+    
+    }
+    
+    input[type=submit] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;  
+        border-radius: 0;
+        height: 2rem;
+        font-size: 1.25rem;
+        border: 2px solid rgba(0, 0, 0, .2);
+        background: #2699FB;
+        color: #fff;
+        margin: 0 auto;
+        box-sizing: border-box;
+        /* margin: 2px; */
+        overflow: hidden;
+        right: -2px;
+    }
+    
+    form {
+        margin: 25px;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    /* Media Querries */
+    /* ############## */
+    
+    /* Tablet */
+    @media screen and (min-width: 361px) {
+    
+        .page-header {
+            height: 200px;
+            line-height: 100px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            
+        }
+        .page-header h1 {
+            font-size: 5rem;
+            width: 100%;
+            margin: 0 auto;
+    
+            /* add outline to h1 */
+            -webkit-text-stroke: 3px black;
+    
+        }
+    
+        /* Unhide navigation */
+        .main-nav ul {
+            display: flex;
+            justify-content: space-around;
+            justify-items: center;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+    
+        .main-nav ul li a {
+            font-size: 1.25rem;
+    
+        }
+    
+        .main-nav {
+            border: 1px solid #fff;
+            line-height: 45px;
+            /* min-width: 500px; */
+        }
+    
+        /* Hide hamburger icon in favor of list navigation */
+        #hamburger {
+            display: none;
+        }
+    
+        .image3 {
+            display: none;
+        }
+    
+        /* unhide last article */
+        article:nth-of-type(n+4) {
+            display: flex;
+        }
+    
+        article {
+            height: 245px;
+        }
+    
+        article h2 {
+            font-size: 2.75rem;
+        }
+    
+        /* target all but the first article h2 */
+        /* and set a smaller max width to force a line break */
+        article:not(:first-of-type) h2 {
+            max-width: 580px;
+        }
+    
+        img {
+            height: 400px;
+            max-height: 400px;
+        }
+    
+        /* remove border of last image */
+        img:nth-of-type(n+4) {
+            border: 0px solid transparent;
+        }
+    
+        footer {
+            font-size: 1rem;
+        }
+    
+        .content {
+            display: grid;
+            grid-area: content;
+            grid-template-areas:
+                "poster1 poster1"
+                "img1 img2"
+                "poster4 poster4"
+                "img4 img4";
+        }
+    
+        /* Products page */
+        /* ############# */
+    
+        .banner {
+            display: none;
+        }
+    
+        .gallery {
+            grid-area: gallery;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(6, 200px);
+        }
+    
+        /* Contact page */
+        /* ############ */
+    
+        /* select second and third fieldset */
+        form fieldset:nth-of-type(-n+3):not(:nth-of-type(1)) {
+            height: 4rem;
+        }
+    
+        /* Split these in two to make edge happy :) */
+        input::placeholder, textarea::placeholder {
+            font-size: 2rem;
+        }
+    
+         input, textarea, fieldset, select, input[type=submit] {
+            font-size: 2rem;
+        }
+    
+        .topic {
+            padding: 1rem;
+            height: 8rem;
+        }
+    
+        input, textarea {
+            padding-left: 1rem;
+        }
+        input[type=submit] {
+            height: 3rem;
+            margin-top: 20px;
+        }
+    
+        input {
+            height: 100%;
+        }
+    
+        .topic:after {
+          line-height: 2.9rem;
+          height: 2.9rem;
+          top: 4rem;
+          right: 1rem;
+        }
+        textarea {
+            height: 12rem;
+        }
+    
+        select {
+            height: 3rem;
+        }
+    }
+    
+    /* Desktop */
+    @media screen and (min-width: 961px) {
+    
+        /* enable background video */
+        video {
+            display: initial;
+            position: absolute;
+            z-index: -10;
+            width: 100%;
+            /* height: 100vh; */
+            /* background-attachment: scroll; */
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+        }
+    
+        .content {
+            display: block;
+        }
+    
+        .poster2, .poster3 {
+            display: flex;
+        }
+        .image3 {
+            display: block;
+        }
+        article {
+            height: 14rem;
+        }
+    
+        img {
+            border: 0px solid transparent;
+            max-height: 400px;
+        }
+    
+        /* Force line break while keeping text centered */
+        article h2 {
+            max-width: 800px;
+        }
+    
+        .main-grid {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+    
+        /* Products page */
+        /* ############# */
+    
+        .banner {
+            display: flex;
+            height: 7rem;
+        }
+    
+        .banner h2 {
+            max-width: 100%;
+        }
+    
+        .gallery {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, 200px);
+        }
+    
+        /* Contact page */
+        /* ############ */
+        .content-contact h3 {
+            color: #707070;
+            font-size: 2rem;
+            display: block;
+            margin: 1.75rem;
+            margin-bottom: 0px;
+        }
+    
+        form {
+            margin: 1rem 4rem;
+            margin-top: 0;
+        }
+    
+        .topic {
+            display: block;
+            padding: 0px;
+            padding-left: 1rem;
+            height: 4rem;
+            line-height: 4rem;
+        }
+    
+        .topic::after {
+          line-height: 2.9rem;
+          height: 2.9rem;
+          top: 0.42rem;
+          right: 1.25rem;
+        }
+    
+        select {
+            display: block;
+            width: 520px;
+            /* float: right; */
+            margin: 6px 20px;
+            padding: 0;
+            float: right;
+        }
+        label {
+            width: 300px;
+            line-height: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+    }
+    
