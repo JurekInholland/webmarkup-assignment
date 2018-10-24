@@ -37,9 +37,9 @@ height: auto;
 /* General */
 /* ####### */
 
-/* Company name should always be visible */
+/* Company name and footer should always fit */
 body {
-    min-width: 300px;
+    min-width: 302px;
 }
 
 /* Setup page elements in a simple grid */
@@ -160,7 +160,6 @@ footer {
     align-items: center;
     justify-content: center;
     grid-area: footer;
-    /* border: 1px solid #fff; */
 }
 
 /* CSS GRID INDEX */
@@ -195,9 +194,9 @@ footer {
 /* Products page */
 /* ############# */
 
-.product-catalog {
+.banner {
     max-width: 100%;
-    height: 45px;
+    height: 3rem;
     grid-area: poster1;
 }
 
@@ -207,9 +206,7 @@ footer {
 
     grid-template-columns: 1fr;
     grid-template-rows: repeat(12, 200px);
-    grid-gap: 18px; 
-    /* max-width: 90%;
-    margin: 0 auto; */
+    grid-gap: 1rem; 
     margin: 20px;
     
 }
@@ -217,8 +214,6 @@ footer {
 .gallery a {
     background-size: cover;
     background-position: center;
-    /* border: 10px solid white; */
-    /* margin: 10px; */
 }
 
 /* Gallery images */
@@ -261,6 +256,109 @@ footer {
     background-image: url(../img/small/product12.jpg);
 }
 
+/* Contact Page */
+/* ############ */
+.content-contact {
+    background: #F5F5F5;
+
+}
+
+.content-contact h3 {
+    display: none;
+}
+
+fieldset {
+    /* margin: 10px; */
+    padding: 0;
+    margin: 15px 0;
+    border: 2px solid #707070;
+    background: #fff;
+    font-size: 1rem;
+
+}
+
+select {
+    width: 100%;
+    font-size: 1rem;
+    height: 1.5rem;
+    margin-top: 10px;
+    color: #707070;
+    border: 2px solid #707070; 
+}
+
+.topic {
+    position: relative;
+    justify-content: space-between;
+    color: #AAA;
+    padding: 5px;
+    min-width: 200px;
+  }
+  
+  .topic:after {
+      content: '˅';
+      font-family: Arial, Helvetica, sans-serif;
+      color: #707070;
+      text-align: center;
+      line-height: 1.25rem;
+      top: 2.1rem;
+      right: 5px;
+      height: 22px;
+      margin: 0;
+      padding: 0;
+      background: #F5F5F5;
+      border: 1px solid #707070;
+      position: absolute;
+      pointer-events: none;
+      overflow: hidden;
+      box-sizing: border-box;
+  }
+ 
+  .topic select {
+      appearance: none;
+      -webkit-appearance: none;
+  }
+
+input, textarea {
+    font-family: Arial, sans-serif;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 5rem;
+    padding-top: 5px;
+    display: block;
+}
+
+input::placeholder, textarea::placeholder {
+    font-size: 1rem;
+    color: #AAA;
+
+}
+
+input[type=submit] {
+    height: 2rem;
+    font-size: 1.25rem;
+    border: 2px solid rgba(0, 0, 0, .2);
+    background: #2699FB;
+    color: #fff;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* margin: 2px; */
+    overflow: hidden;
+    right: -2px;
+}
+
+form {
+    margin: 25px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
 /* Media Querries */
 /* ############## */
 
@@ -338,7 +436,7 @@ footer {
     }
 
     footer {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .content {
@@ -354,7 +452,7 @@ footer {
     /* Products page */
     /* ############# */
 
-    .product-catalog {
+    .banner {
         display: none;
     }
 
@@ -362,6 +460,54 @@ footer {
         grid-area: gallery;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(6, 200px);
+    }
+
+    /* Contact page */
+    /* ############ */
+
+    /* select second and third fieldset */
+    form fieldset:nth-of-type(-n+3):not(:nth-of-type(1)) {
+        height: 4rem;
+    }
+
+    /* Split these in two to make edge happy :) */
+    input::placeholder, textarea::placeholder {
+        font-size: 2rem;
+    }
+
+     input, textarea, fieldset, select, input[type=submit] {
+        font-size: 2rem;
+    }
+
+    .topic {
+        padding: 1rem;
+        height: 8rem;
+    }
+
+    input, textarea {
+        padding-left: 1rem;
+    }
+    input[type=submit] {
+        height: 3rem;
+        margin-top: 20px;
+    }
+
+    input {
+        height: 100%;
+    }
+
+    .topic:after {
+      line-height: 2.9rem;
+      height: 2.9rem;
+      top: 4rem;
+      right: 1rem;
+    }
+    textarea {
+        height: 12rem;
+    }
+
+    select {
+        height: 3rem;
     }
 }
 
@@ -379,7 +525,7 @@ footer {
         display: block;
     }
     article {
-        height: 230px;
+        height: 14rem;
     }
 
     img {
@@ -400,17 +546,62 @@ footer {
     /* Products page */
     /* ############# */
 
-    .product-catalog {
+    .banner {
         display: flex;
-        height: 120px;
+        height: 7rem;
     }
 
-    .product-catalog h2 {
+    .banner h2 {
         max-width: 100%;
     }
 
     .gallery {
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: repeat(3, 200px);
+    }
+
+    /* Contact page */
+    /* ############ */
+    .content-contact h3 {
+        color: #707070;
+        font-size: 2rem;
+        display: block;
+        margin: 1.75rem;
+        margin-bottom: 0px;
+    }
+
+    form {
+        margin: 1rem 4rem;
+        margin-top: 0;
+    }
+
+    .topic {
+        display: block;
+        padding: 0px;
+        padding-left: 1rem;
+        height: 4rem;
+        line-height: 4rem;
+    }
+
+    .topic::after {
+      line-height: 2.9rem;
+      height: 2.9rem;
+      top: 0.42rem;
+      right: 1.25rem;
+    }
+
+    select {
+        display: block;
+        width: 520px;
+        /* float: right; */
+        margin: 6px 20px;
+        padding: 0;
+        float: right;
+    }
+    label {
+        width: 300px;
+        line-height: 3rem;
+        margin: 0;
+        padding: 0;
     }
 }
