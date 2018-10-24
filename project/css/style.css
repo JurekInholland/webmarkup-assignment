@@ -79,7 +79,7 @@ html {
     .page-header {
         height: 4rem;
         line-height: 4rem;
-        background-image: url(../img/companylogoBG.jpg);
+        background-image: url(../img/small/companylogoBG.jpg);
         background-size: cover;
         grid-area: header;
     }
@@ -569,6 +569,9 @@ html {
             margin: 0;
             padding: 0;
             vertical-align: middle;
+        }
+        .page-header {
+            background-image: url(../img/companylogoBG.jpg);
         }
 
         .main-nav {
