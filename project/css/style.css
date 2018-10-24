@@ -289,7 +289,6 @@ html {
     /* ############ */
     .content-contact {
         background: #F5F5F5;
-    
     }
     
     .content-contact h3 {
@@ -404,7 +403,7 @@ html {
             
         }
         .page-header h1 {
-            font-size: 3rem;
+            font-size: 2.9rem;
             margin: 0 auto;
     
             /* add outline to h1 */
@@ -445,7 +444,7 @@ html {
     
         article h2 {
             font-size: 2.75rem;
-            max-width: 34rem;
+            max-width: 24rem;
         }
     
         /* target all but the first article h2 */
@@ -516,7 +515,6 @@ html {
         }
         input[type=submit] {
             height: 3rem;
-            /* margin-top: 1.25rem; */
         }
     
         input {
@@ -539,10 +537,11 @@ html {
     }
     
     /* Additional breakpoint to smooth things out */
-    @media screen and (min-width: 601px) {
+    @media screen and (min-width: 651px) {
         
         article h2 {
-            font-size: 4rem;
+            font-size: 4.5rem;
+            max-width: 39rem;
         }
     
         img {
@@ -551,7 +550,7 @@ html {
         }
 
         .page-header h1 {
-            font-size: 5rem;
+            font-size: 5.5rem;
             -webkit-text-stroke: 0.1875rem black;
         }
     }
