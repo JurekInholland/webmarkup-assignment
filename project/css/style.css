@@ -553,6 +553,7 @@ html {
         .page-header h1 {
             font-size: 5rem;
             -webkit-text-stroke: 0.1875rem black;
+        }
     }
 
     /* Desktop */
@@ -626,10 +627,6 @@ html {
         .banner {
             display: flex;
             height: 7rem;
-        }
-    
-        .banner h2 {
-            /* max-width: 100%; */
         }
     
         .gallery {
