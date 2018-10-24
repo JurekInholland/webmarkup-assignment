@@ -221,7 +221,7 @@ html {
     /* Products page */
     /* ############# */
     
-    .banner h2:nth-of-type(2){
+    .products h2:nth-of-type(1){
         display: none;
     }
 
@@ -631,14 +631,13 @@ html {
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, 12.5rem);
         }
-
-        .banner h2:nth-of-type(2){
-            display: initial;
+        .products h2:first-of-type {
+            display:initial;
         }
-        .banner h2:first-of-type {
-            display:none;
+        .products h2:nth-of-type(2){
+            display: none;
         }
-    
+        
         /* Contact page */
         /* ############ */
         .content-contact h3 {
