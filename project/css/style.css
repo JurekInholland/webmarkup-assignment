@@ -50,6 +50,10 @@ body {
     min-width: 302px;
 }
 
+body video {
+    display: none;
+}
+
 /* Setup page elements in a simple grid */
 .main-grid {
     display: grid;
@@ -523,6 +527,19 @@ form {
 
 /* Desktop */
 @media screen and (min-width: 961px) {
+
+    /* enable background video */
+    body video {
+        display: initial;
+        position: absolute;
+        z-index: -10;
+        width: 100%;
+        /* height: 100vh; */
+        /* background-attachment: scroll; */
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+    }
 
     .content {
         display: block;
