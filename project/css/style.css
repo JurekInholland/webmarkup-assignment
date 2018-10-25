@@ -41,16 +41,9 @@ html {
     input[type="text"],
     input[type="button"],
     input[type="submit"],
-    input[type="checkbox"],
-    .input-checkbox {
+    input[type="checkbox"]{
       appearance: none;
-      -webkit-appearance: none;
       border-radius: 0;
-    }
-
-    /* Hide checkbox in IE11 */
-    input::-ms-check {
-        opacity: 0;
     }
 
     /* ############ */
@@ -89,7 +82,11 @@ html {
         margin: 0.1875rem;
         background-size: cover;
         background-position: center;
+    }
 
+    /* Use <strong> only for SEO, not for styling */
+    strong {
+        font-weight: normal;
     }
 
     /* Page Header */
@@ -110,7 +107,7 @@ html {
     }
     .page-header h1 {
         margin: 0 auto;
-        font-family: Hack;
+        font-family: Hack, sans-serif;
     }
 
     /* Horizontal Navigation */
@@ -129,6 +126,7 @@ html {
         left: .375rem;
         width: 1.825rem;
         height: 2rem;
+        opacity: 0;
     }
     
     /*Show menu when invisible checkbox is checked*/
@@ -386,7 +384,7 @@ html {
       
     .topic:after {
         content: '˅';
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Arial, sans-serif;
         color: #707070;
         text-align: center;
         line-height: 1.25rem;
@@ -819,7 +817,7 @@ select::-ms-expand {
 }
 
 .gallery a {
-    min-height: 200px;
+    min-height: 12.5rem;
     margin: .5rem 0;
 }
 
