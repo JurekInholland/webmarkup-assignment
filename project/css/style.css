@@ -70,6 +70,14 @@ html {
         display: none;
     }
     
+    figure {
+
+        height: 11rem;
+        margin: 0.1875rem;
+        background-size: cover;
+        background-position: center;
+
+    }
     /* Setup page elements in a simple grid */
     .main-grid {
         display: grid;
@@ -165,17 +173,6 @@ html {
         text-align: center;
     }
     
-    /* Images */
-    /* ###### */
-    
-    img {
-        display: block;
-        border: 0.1875rem solid #fff;
-        max-height: 10.625rem;
-        width: 100%;
-        object-fit: cover;    
-    }
-    
     /* Footer */
     /* ###### */
     
@@ -197,6 +194,19 @@ html {
     /* Index page */
     /* ########## */
     
+    .image1{
+        background-image: url(../img/small/product3.jpg);
+    }
+    .image2{
+        background-image: url(../img/small/product8.jpg);
+    }
+    .image3{
+        background-image: url(../img/small/product6.jpg);
+    }
+    .image4{
+        background-image: url(../img/small/product9.jpg);
+    }
+
     /* Hide elements that are not shown in the smallest breakpoint */
     .poster2, .poster3, .poster4 {
         display: none;
@@ -418,7 +428,15 @@ html {
     
     /* Tablet */
     @media screen and (min-width: 361px) {
+
+        figure {
+            height: 16rem;
+        }
     
+        figure:nth-of-type(n+4) {
+            margin: 0;
+        } 
+        
         .page-header {
             height: 12.5rem;
             line-height: 12.5rem;
@@ -464,7 +482,7 @@ html {
         }
     
         article {
-            height: 15rem;
+            height: 10rem;
         }
     
         article h2 {
@@ -476,14 +494,6 @@ html {
         /* and set a smaller max width to force a line break */
         article:not(:first-of-type) h2 {
             max-width: 24rem;
-        }
-        img {
-            height: 16rem;
-            max-height: 16rem;
-        }
-        /* remove border of last image */
-        img:nth-of-type(4) {
-            border: 0rem solid transparent;
         }
     
         footer h3 {
@@ -563,19 +573,22 @@ html {
     
     /* Additional breakpoint to smooth things out */
     @media screen and (min-width: 651px) {
-        
+
+        figure {
+        height: 27rem;
+        }
+
+        article {
+            height: 15rem;
+        }
+
         article h2 {
             font-size: 4.5rem;
             max-width: 39rem;
         }
-    
-        img {
-            height: 25rem;
-            max-height: 25rem;
-        }
 
         .page-header h1 a {
-            font-size: 5.5rem;
+            font-size: 5.25rem;
             -webkit-text-stroke: 0.1875rem black;
         }
     }
@@ -590,6 +603,12 @@ html {
             z-index: -1;
             max-width: 100%;
         }
+
+        figure {
+            height: 25rem;
+            margin: 0;
+        }
+        
         .page-header {
             background-image: url(../img/companylogoBG.jpg);
         }
@@ -616,12 +635,7 @@ html {
         article {
             height: 14rem;
         }
-    
-        img {
-            border: 0 solid transparent;
-            max-height: 25rem;
-        }
-    
+
         /* Force line break while keeping text centered */
         article h2 {
             max-width: 50rem;
@@ -653,7 +667,7 @@ html {
             grid-template-rows: repeat(4, 12.5rem);
         }
         .products h2:first-of-type {
-            display:initial;
+            display: block;
         }
         .products h2:nth-of-type(2){
             display: none;
@@ -708,3 +722,319 @@ html {
             margin-bottom: 2rem;
         }
     }
+
+/* ########### */
+/* IE 11 fixes */
+/* ########### */
+
+@media all and (-ms-high-contrast:none) {
+
+    .main-grid {
+        max-width: 60rem;
+    }
+
+    .content {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 6.375rem 11.375rem 11.375rem 11.375rem 11.375rem;
+    }
+
+    .poster1 {
+        -ms-grid-row: 1;
+    }
+
+    .image1 {
+        -ms-grid-row: 2;
+    }
+
+    .image2 {
+        -ms-grid-row: 3;
+    }
+
+    .image3 {
+        -ms-grid-row: 4;
+    }
+
+    .image4 {
+        -ms-grid-row: 5;
+    }
+}
+
+/* Hide default select arrow */
+select::-ms-expand {
+    display: none;
+}
+
+.gallery {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+}
+
+.gallery a {
+    min-height: 200px;
+    margin: .5rem 0;
+}
+
+#img1 {
+    -ms-grid-row: 1;
+}
+#img2 {
+    -ms-grid-row: 2;
+}
+#img3 {
+    -ms-grid-row: 3;
+}
+#img4 {
+    -ms-grid-row: 4;
+}
+#img5 {
+    -ms-grid-row: 5;
+}
+#img6 {
+    -ms-grid-row: 6;
+}
+#img7 {
+    -ms-grid-row: 7;
+}
+#img8 {
+    -ms-grid-row: 8;
+}
+#img9 {
+    -ms-grid-row: 9;
+}
+#img10 {
+    -ms-grid-row: 10;
+}
+#img11 {
+    -ms-grid-row: 11;
+}
+#img12 {
+    -ms-grid-row: 12;
+}
+
+@media all and (-ms-high-contrast:none) and (min-width:361px) {
+    
+    /* Replace Company logo with SVG to have a stroke effect in IE */
+    h1 a {  
+        visibility: hidden;
+    }
+    h1 {
+        background-image: url(../img/logo.svg);
+    }
+
+    .content {
+        -ms-grid-columns: 1fr 1fr;
+
+        /* account for margin */
+        -ms-grid-rows: 10rem 16.375rem 10rem 16rem;
+    }
+    .poster1 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    .poster4 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+    .image1 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .image2 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+        -ms-grid-column-span: 1;
+    }
+    .image4 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 2;
+    }
+
+    form {
+        margin-top: 0;
+    }
+    .gallery {
+       -ms-grid-columns: 1fr 1fr;
+       -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .gallery a {
+        margin: 0.5rem;
+    }
+
+    #img1 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    #img2 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+    #img3 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    #img4 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+    }
+    #img5 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+    #img6 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+    }
+    #img7 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+    }
+    #img8 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+    }
+    #img9 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+    }
+    #img10 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 2;
+    }
+    #img11 {
+        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+    }
+    #img12 {
+        -ms-grid-row: 6;
+        -ms-grid-column: 2;
+    }
+}
+
+@media all and (-ms-high-contrast:none) and (min-width:651px) {
+    .content {
+        -ms-grid-columns: 1fr 1fr;
+        -ms-grid-rows: 15rem 27.375rem 15rem 27rem;
+    }
+}
+@media all and (-ms-high-contrast:none) and (min-width:961px) {
+
+    body {
+        background-image: url(../img/background.jpeg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        max-width: 100%;
+    }
+
+    .content {
+        -ms-grid-columns: 60rem;
+        -ms-grid-rows: 14rem 25rem 14rem 25rem 14rem 25rem 14rem 25rem;
+    }
+
+    .poster1 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .poster2 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .poster3 {
+        -ms-grid-row: 5;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .poster4 {
+        -ms-grid-row: 7;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    .image1 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .image2 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .image3 {
+        -ms-grid-row: 6;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+    .image4 {
+        -ms-grid-row: 8;
+        -ms-grid-column: 1;
+        -ms-grid-column-span: 1;
+    }
+
+    .gallery {
+        -ms-grid-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        margin: .5rem;
+     }
+     .gallery a {
+         margin: .5rem;
+     }
+
+     #img1 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+    }
+    #img2 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 2;
+    }
+    #img3 {
+        -ms-grid-row: 1;
+        -ms-grid-column: 3;
+    }
+    #img4 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+    }
+    #img5 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 2;
+    }
+    #img6 {
+        -ms-grid-row: 2;
+        -ms-grid-column: 3;
+    }
+    #img7 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 1;
+    }
+    #img8 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 2;
+    }
+    #img9 {
+        -ms-grid-row: 3;
+        -ms-grid-column: 3;
+    }
+    #img10 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+    }
+    #img11 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 2;
+    }
+    #img12 {
+        -ms-grid-row: 4;
+        -ms-grid-column: 3;
+    }
+}
