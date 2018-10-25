@@ -43,6 +43,7 @@ html {
     input[type="submit"],
     input[type="checkbox"]{
       appearance: none;
+      -webkit-appearance: none;
       border-radius: 0;
     }
 
@@ -384,7 +385,6 @@ html {
       
     .topic:after {
         content: '˅';
-        font-family: Arial, sans-serif;
         color: #707070;
         text-align: center;
         line-height: 1.25rem;
@@ -407,7 +407,6 @@ html {
     }
     
     input, textarea {
-        font-family: Arial, sans-serif;
         font-size: 1rem;
         border: 0rem solid transparent;
         width: 100%;
@@ -422,6 +421,7 @@ html {
         min-height: 5rem;
         padding-top: 0.3125rem;
         display: block;
+        font-family: Arial, sans-serif;
     }
     
     input::placeholder, textarea::placeholder {
