@@ -669,7 +669,7 @@ html {
             line-height: 3.75rem;
         }
 
-        .main-nav ul li a {
+        #nav li a {
             font-size: 1.8rem;
         }
 
