@@ -60,6 +60,12 @@ html {
     /* General */
     /* ####### */
     
+    /* General page layout */
+    .page-content {
+        display: flex;
+        flex-direction: column;
+    }
+
     /* Font-Hack */
     @font-face {
         font-family: 'Hack';
