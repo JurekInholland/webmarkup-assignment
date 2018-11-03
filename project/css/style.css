@@ -94,25 +94,26 @@ html {
     /* ########### */
     
     .page-header {
+        display: flex;
+        align-items: center;
         height: 4rem;
-        line-height: 4rem;
         background-image: url(../img/small/companylogoBG.jpg);
         background-size: cover;
     }
     
-    .page-header a {
+    .page-header h1 a {
         color: #fff;
         font-size: 2rem;
-        text-align: center;
-        
+        text-align: center;    
     }
+
     .page-header h1 {
         margin: 0 auto;
         font-family: Hack, sans-serif;
     }
 
-    /* Horizontal Navigation */
-    /* ##################### */
+    /* Page Navigation */
+    /* ############### */
     
     /* Hide nav ul by default: Enabled on large devices via media querry */
     /* or when the hamburger button is pressed. */
@@ -120,6 +121,7 @@ html {
         display: none;    
     }
 
+    /* Invisible checkbox to trigger mobile navigation */
     input[type=checkbox] {
         position: absolute;
         z-index: 15;
@@ -130,19 +132,19 @@ html {
         opacity: 0;
     }
     
-    /*Show menu when invisible checkbox is checked*/
+    /* Show navigation menu when checkbox is checked */
     input[type=checkbox]:checked ~ #nav {
         display: flex;
-        
     }
 
+    /* Navigation container */
     .main-nav {
         height: 2.8rem;
         background: #707070;
         border: .25rem solid #fff;
-        line-height: 4rem;
     }
 
+    /* Navigation ul */
     #nav {
         position: absolute;
         width: 100%;
@@ -150,29 +152,28 @@ html {
         left: 0;
         z-index: 3;
         text-align: center;
-        /* line-height: 5rem; */
         border: .25rem solid #F5F5F5;
         flex-direction: column;
-        /* background: rgba(38, 153, 251,.9); */
         background: #707070;
         margin: 0 auto;
     }
 
+    /* Mobile navigation buttons */
     #nav li a {
         text-transform: uppercase;
-        font-size: 1.25rem;
         color: #fff;
         background: #2699FB;
-        /* text-decoration: none; */
         border: .125rem solid white;
         margin: 0.5rem 2.125rem;
-        max-height: 4rem;
-        min-width: 4rem;
+        height: 2rem;
+        line-height: 2rem;
+        min-width: 8rem;
     }
-    
+
     #nav li a:hover {
         background: #fff;
         color: #2699FB;
+        border: .125rem solid #2699FB;
     }
 
     /* Hamburger in CSS only! */
@@ -220,7 +221,6 @@ html {
         color: #fff;
         background: #000;
         display: flex;
-        align-items: center;
         justify-content: center;
     }
 
@@ -295,6 +295,7 @@ html {
         grid-area: poster1;
     }
     
+    /* Mobile gallery: 1 row, 12 columns with a height of 200px */
     .gallery {
         display: grid;
         grid-template-columns: 1fr;
@@ -358,6 +359,8 @@ html {
         display: none;
     }
     
+    /* Contact form */
+
     fieldset {
         padding: 0;
         margin: 1rem 0;
@@ -475,7 +478,6 @@ html {
         
         .page-header {
             height: 12.5rem;
-            line-height: 12.5rem;
             display: flex;
             align-content: center;
             align-items: center;
@@ -491,7 +493,6 @@ html {
 
         .main-nav {
             border: 0.0625rem solid #fff;
-            line-height: 2.8rem;
         }
     
         /* Horizontal navigation */
@@ -501,6 +502,7 @@ html {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+            align-items: center;
             max-width: 30rem;
             background: none;
             border: none;
@@ -511,10 +513,16 @@ html {
             border: none;
             margin: 0;
             background: none;
+            font-size: 1.25rem;
+            height: 100%;
+            line-height: 2.8rem;
+            min-width: 1rem;
+            
         }
 
         #nav li a:hover {
             background: none;
+            border: none;
         }
 
         /* Hide hamburger icon + checkbox in favor of list navigation */
@@ -550,6 +558,9 @@ html {
             font-size: 1.33rem;
         }
     
+        /* Index page */
+        /* ########## */
+
         .content {
             display: grid;
             grid-area: content;
@@ -658,17 +669,18 @@ html {
             margin: 0;
         }
         
+        /* Replace header image with high res version */
         .page-header {
             background-image: url(../img/companylogoBG.jpg);
         }
 
         .main-nav {
             height: 3.75rem;
-            line-height: 3.75rem;
         }
 
         #nav li a {
             font-size: 1.8rem;
+            line-height: 3.75rem;
         }
 
         .content {
@@ -697,6 +709,7 @@ html {
     
         footer {
             height: 3.5rem;
+            line-height: 3.5rem;
         }
 
         footer h3 {
@@ -715,6 +728,8 @@ html {
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: repeat(4, 12.5rem);
         }
+
+        /* Change 'Products' to 'Product Catalog' */
         .products h2:first-of-type {
             display: block;
         }
@@ -776,6 +791,7 @@ html {
 /* IE 11 fixes */
 /* ########### */
 
+/* This media query targets IE specifically */
 @media all and (-ms-high-contrast:none) {
 
     .content {
@@ -803,69 +819,75 @@ html {
     .image4 {
         -ms-grid-row: 5;
     }
-}
 
-/* Hide default select arrow */
-select::-ms-expand {
-    display: none;
-}
+    /* Hide default select arrow */
+    select::-ms-expand {
+        display: none;
+    }
 
-.gallery {
-    display: -ms-grid;
-    -ms-grid-columns: 1fr;
-    -ms-grid-rows: 1fr 1fr 1fr 1fr;
-}
+    .gallery {
+        display: -ms-grid;
+        -ms-grid-columns: 1fr;
+        -ms-grid-rows: 1fr 1fr 1fr 1fr;
+    }
 
-.gallery a {
-    min-height: 12.5rem;
-    margin: .5rem 0;
-}
+    .gallery a {
+        min-height: 12.5rem;
+        margin: .5rem 0;
+    }
 
-#img1 {
-    -ms-grid-row: 1;
-}
-#img2 {
-    -ms-grid-row: 2;
-}
-#img3 {
-    -ms-grid-row: 3;
-}
-#img4 {
-    -ms-grid-row: 4;
-}
-#img5 {
-    -ms-grid-row: 5;
-}
-#img6 {
-    -ms-grid-row: 6;
-}
-#img7 {
-    -ms-grid-row: 7;
-}
-#img8 {
-    -ms-grid-row: 8;
-}
-#img9 {
-    -ms-grid-row: 9;
-}
-#img10 {
-    -ms-grid-row: 10;
-}
-#img11 {
-    -ms-grid-row: 11;
-}
-#img12 {
-    -ms-grid-row: 12;
+    #img1 {
+        -ms-grid-row: 1;
+    }
+    #img2 {
+        -ms-grid-row: 2;
+    }
+    #img3 {
+        -ms-grid-row: 3;
+    }
+    #img4 {
+        -ms-grid-row: 4;
+    }
+    #img5 {
+        -ms-grid-row: 5;
+    }
+    #img6 {
+        -ms-grid-row: 6;
+    }
+    #img7 {
+        -ms-grid-row: 7;
+    }
+    #img8 {
+        -ms-grid-row: 8;
+    }
+    #img9 {
+        -ms-grid-row: 9;
+    }
+    #img10 {
+        -ms-grid-row: 10;
+    }
+    #img11 {
+        -ms-grid-row: 11;
+    }
+    #img12 {
+        -ms-grid-row: 12;
+    }
 }
 
 @media all and (-ms-high-contrast:none) and (min-width:361px) {
     
     /* Replace Company logo with SVG to have a stroke effect in IE */
-    h1 a {  
-        visibility: hidden;
+    h1 a {
+        /* Make invisible but still clickable */
+        opacity: 0;
     }
+
+    /* Scale the vector logo so it matches the other browsers */
     h1 {
+        display: flex;
         background-image: url(../img/logo.svg);
+        background-size: 110%;
+        background-position: center;
     }
 
     .content {
